@@ -1,0 +1,26 @@
+application: vettrproject
+version: 1
+runtime: python
+api_version: 1
+
+handlers:
+- url: /
+  script: main.py
+
+- url: /admin
+  script: api/admin.py
+
+- url: /api/.*
+  script: api/calls.py
+
+- url: /js/
+  static_dir: static/js
+
+- url: /css
+  static_dir: static/css
+
+- url: /admin
+  script: api/admin.py
+
+- url: /employers
+  script: main.py
