@@ -14,9 +14,9 @@ alert("hello world");
 	//$('#tag').attr("src", "http://google.com");
 
 	$(".con").click(function() {
-	    alert("ALDS");
+
 	    //$("#" + $(this).attr("skype")).html("");
-	    alert("/api/prospects/contact?prospectSkype=" + globalSkype + "&employerSkype=" + $(this).attr("skype"));
+//	    alert("/api/prospects/contact?prospectSkype=" + globalSkype + "&employerSkype=" + $(this).attr("skype"));
 	    $.get("/api/prospects/contact?prospectSkype=" + globalSkype + "&employerSkype=" + $(this).attr("skype"), function(data) {
 		alert("");
 	    });

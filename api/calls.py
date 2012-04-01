@@ -40,9 +40,17 @@ class ContactProspect(webapp.RequestHandler):
         prospectSkype = self.request.get("prospectSkype")
         employerSkype = self.request.get("employerSkype")
         for booking in Booking.all():
-            if booking.prospect.skype == prospectSkype && booking.employer.skype == employerSkype:
+            if booking.prospect.skype == prospectSkype and booking.employer.skype == employerSkype:
                 booking.accepted = True
                 booking.put()
+
+class ContactList(webapp.RequestHandler):
+    self.response.headers['Content-Type'] = 'text/plain'
+    def get(self):
+        for booking in Booking.all():
+            if booking.accepted:
+                print "Introduce " + booking.employer.name  + "(" + booking.employer.email +  ") at " + +  "  to "  + booking.prospect.name + " (" + booking.prospect.email + ")"
+            
 
 application = webapp.WSGIApplication([
   ('/api/bookings', Bookings),
