@@ -1,6 +1,8 @@
 $(function(){
-    $.get("http://localhost:8080/api/bookings?skype=robertwhitehead.07", function(data) {
+    $.get("api/bookings?skype=" + globalSkype, function(data) {
 
+
+	alert("hello world");
    for( i in data) {
 	var template = $("#skypeCall").html();
 	var html = Mustache.to_html(template, data[i]);
