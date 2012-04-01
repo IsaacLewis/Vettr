@@ -4,19 +4,13 @@
 </head>
 <body>
     <div class="container">
-      [[[RENDER("static/navbar.html", title="Vettr")]]]
-      [[[RENDER("static/hero.html", title="We're Tired",
-      subtitle="Hello world", rest="")]]]
       <!-- Example row of columns -->
-      <div class="row">
+      <div id="signup-form">
 
 	[[[RENDER("forms/genericform.htt", submit="potential")]]]
       </div>
-      <hr>
-      <footer>
-        <p>&copy; Company 2012</p>
-      </footer>
     </div> <!-- /container -->
 [[[CSS("css/bootstrap.css")]]]
+[[[CSS("css/vettr.css")]]]
 </body>
 </html>
