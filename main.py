@@ -105,6 +105,7 @@ class ProspectComplete(webapp.RequestHandler):
 application = webapp.WSGIApplication([
   ('/', MainPage),
   ('/potential', ProspectPage),
+  ('/potential/complete', ProspectPage),
   ('/employer', EmployerPage),
 ], debug=True)
 

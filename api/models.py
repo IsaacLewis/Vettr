@@ -2,7 +2,7 @@ from google.appengine.ext import db
 from google.appengine.api import mail
 import simplejson as json
 
-def emailProspectAwaitingVet(d):
+def emailProspectAwaitingVet(p):
     email = p.email
     name = p.name
     mail.send_mail(sender="Example.com Support <support@example.com>",
@@ -10,7 +10,7 @@ def emailProspectAwaitingVet(d):
               subject="Your booking is awaiting confirmation",
               body="""BITCHES""")
 
-def emailProspectConfirmingVet(d):
+def emailProspectConfirmingVet(p):
     email = p.email
     name = p.name
     mail.send_mail(sender="Example.com Support <support@example.com>",
