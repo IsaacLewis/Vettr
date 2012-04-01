@@ -10,23 +10,20 @@
       var globalSkype = "[[[skype]]]"
       </script>
 
-      <p style="margin-top:300px;">
+      <p style="margin-top:100px;">
 	
       </p>
       
     <div class="row">
-	<div class="span6">
+	<div class="span12">
 	  <div id="place">
 	    </div>
 	</div>
-	 <div class="span6">
-	   <iframe SRC="potential" id="tag" width="300" height="600">
-	   </iframe>
-	 </div>
+
       </div>
       <hr>
       <footer>
-        <p>&copy; Company 2012</p>
+        <p>&copy; Vettr.co.uk 2012</p>
       </footer>
     </div> <!-- /container -->
  
@@ -48,23 +45,22 @@ Skype 'Skype Me™!' button
 http://www.skype.com/go/skypebuttons
 -->
     <div class="row">
-      <h1>{{name}}</h1>
+      <div class="span12">
+      <h1>{{name}} at {{when}}</h1>
       <h2>{{education}}</h2>
-      <a href="{{linkedin}}">LinkedIn</a>
-       <a href="{{github}}">GitHub</a>
-    <a href="skype:{{skype}}?call"><img
+      <h3><a href="{{linkedin}}">LinkedIn</a></h3>
+	<h3><a href="{{github}}">GitHub</a></h3>
+	
+    <p><a href="skype:{{skype}}?call"><img
     src="http://download.skype.com/share/skypebuttons/buttons/call_blue_white_124x52.png"
     style="border: none;" width="124" height="52" alt="Skype Me™!"/>
     </a>
 
-      <div class="row" id="{{skype}}">
-      <a id="con" class="con btn btn-large btn-success" 
-         skype="{{skype}}" action="true">Contact</a>
-      <a id="con" class="con btn btn-large btn-danger" 
-         skype="{{skype}}" action="false">Don't Contact</a>
+      <a id="con" class="con btn btn-large btn-success"
+      skype="{{skype}}">Exchange Contact Details</a></p>
+	
 	</div>
       </div>
-
-    
+      <hr>
 </script>
 </html>
