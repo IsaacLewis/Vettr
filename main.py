@@ -68,6 +68,12 @@ class EmployerPage(webapp.RequestHandler):
       self.response.headers['Content-Type'] = 'text/html'
       self.response.out.write(RENDER("static/index.html"))
 
+
+class ProspectCompletePage(webapp.RequestHandler):
+    def get(self):
+      self.response.headers['Content-Type'] = 'text/html'
+      self.response.out.write(RENDER("static/complete.html"))
+
 class ProspectPage(webapp.RequestHandler):
     def get(self):
       self.response.headers['Content-Type'] = 'text/html'
@@ -95,7 +101,7 @@ class ProspectPage(webapp.RequestHandler):
           github = "http://"  + linkedin
       
       Prospect.addProspect(skype, name, email, education, linkedin, github)
-      self.response.redirect("/potential/complete", permanent=False)
+      self.redirect("/potential_complete", permanent=False)
 
 class ProspectComplete(webapp.RequestHandler):
     def get(self):
@@ -105,7 +111,7 @@ class ProspectComplete(webapp.RequestHandler):
 application = webapp.WSGIApplication([
   ('/', MainPage),
   ('/potential', ProspectPage),
-  ('/potential/complete', ProspectPage),
+  ('/potential_complete', ProspectCompletePage),
   ('/employer', EmployerPage),
 ], debug=True)
 
