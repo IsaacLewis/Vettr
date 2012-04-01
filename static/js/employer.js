@@ -16,9 +16,9 @@ alert("hello world");
 	$(".con").click(function() {
 	    alert("ALDS");
 	    //$("#" + $(this).attr("skype")).html("");
-	    alert("/api/prospects/contact?prospectSkype=" + globalSkype + "&employeeSkype=" + $(this).attr("skype"));
-	    $.get("/api/prospects/contact?prospectSkype=" + globalSkype + "&employeeSkype=" + $(this).attr("skype"), function(data) {
-		alert("lads");
+	    alert("/api/prospects/contact?prospectSkype=" + globalSkype + "&employerSkype=" + $(this).attr("skype"));
+	    $.get("/api/prospects/contact?prospectSkype=" + globalSkype + "&employerSkype=" + $(this).attr("skype"), function(data) {
+		alert("");
 	    });
 	});
     });

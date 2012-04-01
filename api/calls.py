@@ -38,7 +38,11 @@ class Bookings(webapp.RequestHandler):
 class ContactProspect(webapp.RequestHandler):
     def get(self):
         prospectSkype = self.request.get("prospectSkype")
-        employeeSkype = self.request.get("employeeSkype")
+        employerSkype = self.request.get("employerSkype")
+        for booking in Booking.all():
+            if booking.prospect.skype == prospectSkype && booking.employer.skype == employerSkype:
+                booking.accepted = True
+                booking.put()
 
 application = webapp.WSGIApplication([
   ('/api/bookings', Bookings),
