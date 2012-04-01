@@ -35,7 +35,7 @@ def RENDER_JSON(string, f):
     t = INCLUDE(string)
     return process(t, json.loads(INCLUDE(f)))
 
-generalContent = dict(CSS=CSS, INCLUDE=INCLUDE, RENDER=RENDER, RENDER_DICT=RENDER_DICT, RENDER_JSON=RENDER_JSON)
+generalContent = dict(CSS=CSS, JS=JS,INCLUDE=INCLUDE, RENDER=RENDER, RENDER_DICT=RENDER_DICT, RENDER_JSON=RENDER_JSON)
 
 def process(string, ctx=None):
     p1 = string.partition(LEFT)
@@ -48,6 +48,8 @@ def process(string, ctx=None):
 
             if(not(ctx)):
               ctx = generalContent
+            else:
+                ctx.update(generalContent)
             
             middle =  eval(code, ctx)
             final = process(rest, ctx)
@@ -66,8 +68,7 @@ class MainPage(webapp.RequestHandler):
 class EmployerPage(webapp.RequestHandler):
     def get(self):
       self.response.headers['Content-Type'] = 'text/html'
-      self.response.out.write(RENDER("static/index.html"))
-
+      self.response.out.write(RENDER("static/employer.html", skype=self.request.get("skype")))
 
 class ProspectCompletePage(webapp.RequestHandler):
     def get(self):

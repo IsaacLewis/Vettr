@@ -1,0 +1,70 @@
+<html>
+<head>
+<title>Vettr</title>
+</head>
+<body>
+    <div class="container">
+      [[[RENDER("static/navbar.html", title="Vettr")]]]
+      <!-- Example row of columns -->
+      <script>
+      var globalskype = "[[[skype]]]"
+      </script>
+
+      <p style="margin-top:300px;">
+	
+      </p>
+      
+    <div class="row">
+	<div class="span6">
+	  <div id="place">
+	    </div>
+	</div>
+	 <div class="span6">
+	   <iframe SRC="potential" id="tag" width="300" height="600">
+	   </iframe>
+	 </div>
+      </div>
+      <hr>
+      <footer>
+        <p>&copy; Company 2012</p>
+      </footer>
+    </div> <!-- /container -->
+ 
+[[[CSS("css/bootstrap.css")]]]
+[[[JS("http://code.jquery.com/jquery-1.6.4.min.js")]]]
+  [[[JS("https://raw.github.com/janl/mustache.js/master/mustache.js")]]]
+    [[[JS("js/employer.js")]]]
+</body>
+
+
+<script type="text/javascript"
+    src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script>
+
+    
+<script id="skypeCall" type="text/template">
+    
+<!--
+Skype 'Skype Me™!' button
+http://www.skype.com/go/skypebuttons
+-->
+    <div class="row">
+      <h1>{{name}}</h1>
+      <h2>{{education}}</h2>
+      <a href="{{linkedin}}">LinkedIn</a>
+       <a href="{{github}}">GitHub</a>
+    <a href="skype:{{skype}}?call"><img
+    src="http://download.skype.com/share/skypebuttons/buttons/call_blue_white_124x52.png"
+    style="border: none;" width="124" height="52" alt="Skype Me™!"/>
+    </a>
+
+      <div class="row" id="{{skype}}">
+      <a id="con" class="con btn btn-large btn-success" 
+         skype="{{skype}}" action="true">Contact</a>
+      <a id="con" class="con btn btn-large btn-danger" 
+         skype="{{skype}}" action="false">Don't Contact</a>
+	</div>
+      </div>
+
+    
+</script>
+</html>
