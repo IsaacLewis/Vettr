@@ -41,8 +41,9 @@ class Prospect(db.Model):
     applicationDate = db.DateTimeProperty(auto_now_add=True)
     vetted = db.BooleanProperty(default=False)
 
+    @staticmethod
     def addProspect(s, n, em, ed, ln, gh):
-        p = Prospect(skype=s, name=n, email=em, education=ed, linkedin=db.Link(ln), github=db.Link(gh))
+        p = Prospect(skype=s, name=n, email=em, education=ed, linkedin=ln, github=gh)
         p.put()
         emailProspectAwaitingVet(p)
         
