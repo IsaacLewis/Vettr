@@ -1,28 +1,28 @@
 	<form class="form-horizontal" method="post" action="[[[submit]]]">
         <fieldset>
 	   <div class="control-group">
-            <label class="control-label" for="input01">Skype Account</label>
+            <label class="control-label" for="input01">Skype Account *</label>
             <div class="controls">
               <input type="text" class="input-default" name="skype">
             </div>
           </div>
           
           <div class="control-group">
-            <label class="control-label" for="input01">Name</label>
+            <label class="control-label" for="input01">Name *</label>
             <div class="controls">
               <input type="text" class="input-xlarge" name="name">
             </div>
           </div>
           
           <div class="control-group">
-            <label class="control-label" for="input01">Contact Email</label>
+            <label class="control-label" for="input01">Contact Email *</label>
             <div class="controls">
               <input type="text" class="input-xlarge" name="email">
             </div>
           </div>
 
 	  <div class="control-group">
-            <label class="control-label" for="input01">University</label>
+            <label class="control-label" for="input01">University *</label>
             <div class="controls">
               <input type="text" class="input-xlarge" name="education">
             </div>
