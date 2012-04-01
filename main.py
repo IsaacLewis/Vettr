@@ -3,7 +3,7 @@ import datetime
 import urllib
 import wsgiref.handlers
 
-from api.models import Employer
+from api.models import Employer, Prospect
 
 from google.appengine.ext import db
 from google.appengine.api import users
@@ -71,22 +71,36 @@ class EmployerPage(webapp.RequestHandler):
 class ProspectPage(webapp.RequestHandler):
     def get(self):
       self.response.headers['Content-Type'] = 'text/html'
-      self.response.out.write(RENDER("static/index.html"))
+      self.response.out.write(RENDER("static/signup.html"))
 
     def post(self):
       skype = self.request.get("skype")
       name = self.request.get("name")
       email = self.request.get("email")
       education = self.request.get("education")
+      
       linkedin = self.request.get("linkedin")
       github = self.request.get("github")
+
+      if(github == ""):
+        github = None
+      else:
+        if "http://" not in github:
+          github = "http://"  + github
+
+      if(linkedin == ""):
+        linkedin = None
+      else:
+        if "http://" not in linkedin:
+          github = "http://"  + linkedin
+      
       Prospect.addProspect(skype, name, email, education, linkedin, github)
       self.response.redirect("/potential/complete", permanent=False)
 
 class ProspectComplete(webapp.RequestHandler):
     def get(self):
       self.response.headers['Content-Type'] = 'text/html'
-      self.response.out.write(RENDER("static/index.html"))
+      self.response.out.write(RENDER("static/signup.html"))
 
 application = webapp.WSGIApplication([
   ('/', MainPage),

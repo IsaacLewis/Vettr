@@ -13,7 +13,7 @@ handlers:
 - url: /api/.*
   script: api/calls.py
 
-- url: /js/
+- url: /js
   static_dir: static/js
 
 - url: /css
@@ -23,4 +23,8 @@ handlers:
   script: api/admin.py
 
 - url: /employers
+  script: main.py
+
+
+- url: /.*
   script: main.py
