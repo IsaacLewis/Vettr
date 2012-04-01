@@ -76,7 +76,7 @@ class Booking(db.Model):
                 bd["education"] = p.education
                 bd["linkedin"] = p.linkedin
                 bd["github"]= p.github
-                bd["when"] = str(booking.when)
+                bd["when"] = str(booking.when.isoformat())
                 bookingList += [bd]
 
         bookingList.sort(lambda x, y: x["when"] > y["when"])

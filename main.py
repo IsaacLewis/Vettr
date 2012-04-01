@@ -78,6 +78,7 @@ class ProspectPage(webapp.RequestHandler):
       name = self.request.get("name")
       email = self.request.get("email")
       education = self.request.get("education")
+      
       linkedin = self.request.get("linkedin")
       github = self.request.get("github")
       Prospect.addProspect(skype, name, email, education, linkedin, github)
