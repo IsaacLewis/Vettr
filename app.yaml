@@ -28,6 +28,5 @@ handlers:
 - url: /employers
   script: main.py
 
-
 - url: /.*
   script: main.py

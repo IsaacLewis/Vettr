@@ -75,6 +75,11 @@ class ProspectCompletePage(webapp.RequestHandler):
       self.response.headers['Content-Type'] = 'text/html'
       self.response.out.write(RENDER("static/complete.html"))
 
+class ChooseStartupPage(webapp.RequestHandler):
+    def get(self):
+      self.response.headers['Content-Type'] = 'text/html'
+      self.response.out.write(RENDER("static/choosestartup.html"))
+
 class ProspectPage(webapp.RequestHandler):
     def get(self):
       self.response.headers['Content-Type'] = 'text/html'
@@ -114,6 +119,7 @@ application = webapp.WSGIApplication([
   ('/potential', ProspectPage),
   ('/potential_complete', ProspectCompletePage),
   ('/employer', EmployerPage),
+  ('/choosestartup', ChooseStartupPage),
 ], debug=True)
 
 def main():

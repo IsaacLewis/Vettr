@@ -4,16 +4,23 @@ body {
 }
 
 #book-place {
+    background-image:url('../img/BG.jpg');
     position: relative;
     left: 600px;
     top: 200px;
     background-color: #ddd;
     height: 160px;
-    width: 300px;
-    padding: 20px;
+    width: 355px;
+    padding: 45px 0px 0px 0px;
     text-align: center;
 }
 
+#timer {
+    top: 47px;
+    color: #fff;
+    font-size: 56px;
+    position: relative;
+}
 
 #signup-form {
     position: relative;
@@ -29,6 +36,4 @@ body {
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;    
-
-
 }
