@@ -60,7 +60,7 @@ class Interest(db.Model):
 class Booking(db.Model):
     employer = db.ReferenceProperty(Employer, required=True)
     prospect = db.ReferenceProperty(Prospect, required=True)
-    when = db.DateTimeProperty(auto_now_add=True)
+    when = db.StringProperty()
 
     happened = db.BooleanProperty(default=False)
     accepted = db.BooleanProperty(default=False)
@@ -77,7 +77,7 @@ class Booking(db.Model):
                 bd["education"] = p.education
                 bd["linkedin"] = p.linkedin
                 bd["github"]= p.github
-                bd["when"] = str(booking.when.isoformat())
+                bd["when"] = str(booking.when)
                 bookingList += [bd]
 
         bookingList.sort(lambda x, y: x["when"] > y["when"])

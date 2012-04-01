@@ -45,15 +45,17 @@ class ContactProspect(webapp.RequestHandler):
                 booking.put()
 
 class ContactList(webapp.RequestHandler):
-    self.response.headers['Content-Type'] = 'text/plain'
     def get(self):
+        self.response.headers['Content-Type'] = 'text/plain'
         for booking in Booking.all():
             if booking.accepted:
-                print "Introduce " + booking.employer.name  + "(" + booking.employer.email +  ") at " + +  "  to "  + booking.prospect.name + " (" + booking.prospect.email + ")"
+                self.response.out.write("WRIING")
+                self.response.out.write("Introduce " + str(booking.employer.name)  + "(" + str(booking.employer.email) +  ") at " + str(booking.employer.company) + "  to "  + str(booking.prospect.name) + " (" + str(booking.prospect.email) + ")")
             
 
 application = webapp.WSGIApplication([
   ('/api/bookings', Bookings),
+    ('/api/list', ContactList),
   ('/api/prospects/contact', ContactProspect)
 ], debug=True)
 

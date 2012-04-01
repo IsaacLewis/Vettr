@@ -13,7 +13,7 @@ e.put()
 i = Interest(employer = e, prospect = p)
 i.put()
 
-b = Booking(employer=e, prospect=p)
+b = Booking(employer=e, prospect=p, when="1333286123")
 b.put()
 
 
