@@ -45,7 +45,7 @@ class Prospect(db.Model):
     def addProspect(s, n, em, ed, ln, gh):
         p = Prospect(skype=s, name=n, email=em, education=ed, linkedin=ln, github=gh)
         p.put()
-        emailProspectAwaitingVet(p)
+
         
 class Employer(db.Model):
     skype = db.StringProperty(required=True)
